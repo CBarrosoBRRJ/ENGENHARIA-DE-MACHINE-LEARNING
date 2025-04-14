@@ -1,16 +1,21 @@
-"""Project pipelines."""
-from __future__ import annotations
-
-from kedro.framework.project import find_pipelines
 from kedro.pipeline import Pipeline
-
+from projeto_kobe_ml.pipelines import tratamento_dados, separacao_treino_teste, treinamento, aplicacao
 
 def register_pipelines() -> dict[str, Pipeline]:
-    """Register the project's pipelines.
+    tratamento_dados_pipeline = tratamento_dados.create_pipeline()
+    separacao_treino_teste_pipeline = separacao_treino_teste.create_pipeline()
+    treinamento_pipeline = treinamento.create_pipeline()
+    aplicacao_pipeline = aplicacao.create_pipeline()
 
-    Returns:
-        A mapping from pipeline names to ``Pipeline`` objects.
-    """
-    pipelines = find_pipelines()
-    pipelines["__default__"] = sum(pipelines.values())
-    return pipelines
+    return {
+        "tratamento_dados": tratamento_dados_pipeline,
+        "separacao_treino_teste": separacao_treino_teste_pipeline,
+        "treinamento": treinamento_pipeline,
+        "aplicacao": aplicacao_pipeline,
+        "__default__": (
+            tratamento_dados_pipeline
+            + separacao_treino_teste_pipeline
+            + treinamento_pipeline
+            + aplicacao_pipeline
+        ),
+    }
