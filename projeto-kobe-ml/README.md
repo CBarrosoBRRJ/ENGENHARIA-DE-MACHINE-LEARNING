@@ -12,7 +12,7 @@ Este projeto implementa um pipeline completo de machine learning para:
 
 <br>
 
-![Texto alternativo](./data/09_img/geral.drawio.png)
+![Texto alternativo](./data/geral.drawio.png)
 
 ## Configuração do Ambiente
 
