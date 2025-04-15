@@ -14,6 +14,9 @@ Este projeto implementa um pipeline completo de machine learning para:
 
 ![Texto alternativo](./data/geral.drawio.png)
 
+<br>
+
+
 ## Configuração do Ambiente
 
 - **Python**: 3.11.9
@@ -245,7 +248,7 @@ graph TD
 17. **O aluno criou pipeline de treinamento no MLflow?**  
     Sim, com runs separados para cada modelo.
 
-    ![Texto alternativo](./data/09_img/mlflow.png)
+    ![Texto alternativo](./data/mlflow.png)
 
 <br>
 
@@ -274,7 +277,7 @@ graph TD
 20. **O aluno implementou dashboard Streamlit?**  
     Sim, segue a imagem.
 
-    ![Texto alternativo](./data/09_img/streamlit.png)
+    ![Texto alternativo](./data/streamlit.png)
 
 <br>
 
