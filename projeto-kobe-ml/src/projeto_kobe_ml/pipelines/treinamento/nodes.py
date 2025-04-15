@@ -112,13 +112,13 @@ def train_logistic_regression(data_train: pd.DataFrame, data_test: pd.DataFrame)
             plt.close()
             os.remove("roc_curve_lr.png")
 
-            # Salvar modelo
-            save_model(lr_model, "logistic_regression")
+            # Salvar modelo no caminho correto
+            model_path = "data/06_models/logistic_regression"
+            os.makedirs(os.path.dirname(model_path), exist_ok=True)
+            save_model(lr_model, model_path)
             mlflow.sklearn.log_model(lr_model, "logistic_regression")
-            mlflow.log_artifact("logistic_regression.pkl")
-            os.remove("logistic_regression.pkl")
+            logger.info(f"Modelo de Regressão Logística salvo em {model_path}.pkl")
 
-            logger.info("Modelo de Regressão Logística salvo e registrado no MLflow")
             return lr_model
 
     except Exception as e:
@@ -221,13 +221,13 @@ def train_decision_tree(data_train: pd.DataFrame, data_test: pd.DataFrame) -> ob
             plt.close()
             os.remove("roc_curve_dt.png")
 
-            # Salvar modelo
-            save_model(dt_model, "decision_tree")
+            # Salvar modelo no caminho correto
+            model_path = "data/06_models/decision_tree"
+            os.makedirs(os.path.dirname(model_path), exist_ok=True)
+            save_model(dt_model, model_path)
             mlflow.sklearn.log_model(dt_model, "decision_tree")
-            mlflow.log_artifact("decision_tree.pkl")
-            os.remove("decision_tree.pkl")
+            logger.info(f"Modelo de Árvore de Decisão salvo em {model_path}.pkl")
 
-            logger.info("Modelo de Árvore de Decisão salvo e registrado no MLflow")
             return dt_model
 
     except Exception as e:
