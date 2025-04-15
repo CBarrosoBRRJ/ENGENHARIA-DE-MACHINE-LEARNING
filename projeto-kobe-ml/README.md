@@ -1,5 +1,7 @@
 # Projeto Kobe Bryant Shot Prediction
 
+### Link do Github: https://github.com/CBarrosoBRRJ/ENGENHARIA-DE-MACHINE-LEARNING/tree/main/projeto-kobe-ml
+
 Projeto de Machine Learning para prever a probabilidade de acerto de arremessos do jogador de basquete Kobe Bryant, utilizando Kedro, MLflow e PyCaret.
 
 ## Visão Geral
