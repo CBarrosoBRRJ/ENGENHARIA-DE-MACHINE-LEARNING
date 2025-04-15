@@ -1,11 +1,4 @@
-# Here you can define all your datasets by using simple YAML syntax.
-#
-# Documentation for this file format can be found in "The Data Catalog"
-# Link: https://docs.kedro.org/en/stable/data/data_catalog.html
-
-
-
-
+# conf/base/catalog.yml
 dataset_kobe_dev:
   type: pandas.ParquetDataset
   filepath: data/01_raw/dataset_kobe_dev.parquet
@@ -14,11 +7,11 @@ dados_tratados:
   type: pandas.ParquetDataset
   filepath: data/02_intermediate/dados_tratados.parquet
 
-dados_treino:  # Alterado de dev_train
+dados_treino:
   type: pandas.ParquetDataset
   filepath: data/03_primary/dados_treino.parquet
 
-dados_teste:  # Alterado de dev_test
+dados_teste:
   type: pandas.ParquetDataset
   filepath: data/03_primary/dados_teste.parquet
 
@@ -26,7 +19,10 @@ dataset_kobe_prod:
   type: pandas.ParquetDataset
   filepath: data/01_raw/dataset_kobe_prod.parquet
 
-# conf/base/catalog.yml
+prod_data_processed:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/prod_data_processed.parquet
+
 logistic_regression_model:
   type: pickle.PickleDataset
   filepath: data/06_models/logistic_regression.pkl

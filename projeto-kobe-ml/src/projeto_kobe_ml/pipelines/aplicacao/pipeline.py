@@ -1,11 +1,11 @@
+# src/projeto_kobe_ml/pipelines/aplicacao/pipeline.py
 """
 Pipeline 'aplicacao' para carregar e aplicar o modelo de produção com MLflow
 """
 
 from kedro.pipeline import Pipeline, node
-from projeto_kobe_ml.pipelines.aplicacao.nodes import apply_model, preprocess_prod_data
+from .nodes import preprocess_prod_data, apply_model
 
-# pipelines/aplicacao/pipeline.py
 def create_pipeline(**kwargs):
     return Pipeline(
         [
@@ -19,6 +19,7 @@ def create_pipeline(**kwargs):
                 func=apply_model,
                 inputs={
                     "data_prod": "prod_data_processed",
+                    "data_dev": "dataset_kobe_dev",
                     "model": "logistic_regression_model"
                 },
                 outputs=None,

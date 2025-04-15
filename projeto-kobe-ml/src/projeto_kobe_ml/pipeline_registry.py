@@ -1,3 +1,4 @@
+# src/projeto_kobe_ml/pipeline_registry.py
 from kedro.pipeline import Pipeline
 from projeto_kobe_ml.pipelines import tratamento_dados, separacao_treino_teste, treinamento, aplicacao
 
